@@ -1,9 +1,9 @@
-import React from 'react';
+import '../styles/Header.css'
 
 function Header() {
   return (
       <header className="App-header">
-        <h1>My Thoughts Today</h1>
+        <h1>My Thoughts Pad</h1>
       </header>
   );
 }

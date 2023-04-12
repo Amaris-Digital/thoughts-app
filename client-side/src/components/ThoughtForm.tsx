@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/ThoughtList.css'
 
 type Question = {
   text: string;
@@ -22,7 +23,7 @@ const ThoughtForm: React.FC<ThoughtFormProps> = ({ question, onBack, onSubmit })
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='answer-thought'>
       <h3>{question.text}</h3>
       <label>
         Your answer:
@@ -30,7 +31,7 @@ const ThoughtForm: React.FC<ThoughtFormProps> = ({ question, onBack, onSubmit })
       </label>
       <button type="submit">Submit</button>
     </form>
-    <button onClick={onBack}>Back</button>
+    <button className='back-btn' onClick={onBack}>Back</button>
     </>
   );
 };
