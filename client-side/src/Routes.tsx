@@ -10,11 +10,11 @@ import LoginPage from './pages/LoginPage';
 const AppRoutes: React.FC = () => {
   return (
         <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/my-thoughts" element={<MyThoughts />} />
-        <Route path="/add-my-thought" element={<AddMyThought />} />
-        <Route path="/about" element={<AboutApp />} />
-        <Route path="/LoginPage" element={<LoginPage />} />
+          <Route path="/" element={<Home />}/>
+          <Route path="/my-thoughts" element={<MyThoughts />} />
+          <Route path="/add-my-thought" element={<AddMyThought />} />
+          <Route path="/about" element={<AboutApp />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
         </Routes>
   );
 };
