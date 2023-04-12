@@ -9,11 +9,11 @@ import Home from './pages/Home';
 const AppRoutes: React.FC = () => {
   return (
         <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/my-thoughts" element={<MyThoughts initialThoughts={[]} />} />
-        <Route path="/favourites" element={<Favourites />} />
-        <Route path="/add-my-thought" element={<AddMyThought />} />
-        <Route path="/about" element={<AboutApp />} />
+          <Route path="/" element={<Home />}/>
+          <Route path="/my-thoughts" element={<MyThoughts initialThoughts={[]} />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/add-my-thought" element={<AddMyThought />} />
+          <Route path="/about" element={<AboutApp />} />
         </Routes>
   );
 };
