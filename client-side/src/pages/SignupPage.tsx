@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../styles/Auth.css'
 type SignupFormProps = {
   onSignup: (email: string, password: string) => void;
 };
@@ -19,18 +19,18 @@ const SignupForm: React.FC<SignupFormProps> = ({ onSignup }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='auth-container'>
       <h2>Sign Up</h2>
       <label>
-        Email:
+        Email: <br />
         <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
       </label>
       <label>
-        Password:
+        Password: <br />
         <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
       </label>
       <label>
-        Confirm Password:
+        Confirm Password: <br />
         <input type="password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required />
       </label>
       <button type="submit">Sign Up</button>
