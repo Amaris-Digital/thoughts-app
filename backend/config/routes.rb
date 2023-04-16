@@ -5,7 +5,5 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
 
   get "/auto_login", to: "users#auto_login"
-  
-  resource :questions
-  resource :responses
+
 end
