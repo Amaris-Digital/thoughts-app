@@ -6,6 +6,8 @@ import AddMyThought from './pages/AddMyThought';
 import AboutApp from './pages/AboutApp';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import LogoutPage from './pages/LogoutPage';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -13,8 +15,11 @@ const AppRoutes: React.FC = () => {
           <Route path="/" element={<Home />}/>
           <Route path="/my-thoughts" element={<MyThoughts />} />
           <Route path="/add-my-thought" element={<AddMyThought />} />
-          <Route path="/about" element={<AboutApp />} />
-          <Route path="/LoginPage" element={<LoginPage />} />
+          <Route path="/about" element={<LogoutPage />} />
+          
+          <Route path="/LoginPage" element={<SignupPage onSignup={function (email: string, password: string): void {
+        throw new Error('Function not implemented.');
+      } } />} />
         </Routes>
   );
 };
