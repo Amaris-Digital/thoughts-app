@@ -1,50 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Thought } from '../types';
+import { getThoughts } from '../MyThoughtsDB';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 
-type MyThoughtsProps = {
-  initialThoughts: Thought[];
-};
+const MyThoughts: React.FC = () => {
+  const [thoughts, setThoughts] = useState<Thought[]>([]);
 
-const MyThoughts: React.FC<MyThoughtsProps> = ({ initialThoughts }) => {
-  const [thoughts, setThoughts] = useState(initialThoughts);
-
-  const addThought = (thought: Thought) => {
-    setThoughts([...thoughts, thought]);
-  };
-
-  const updateThought = (updatedThought: Thought) => {
-    setThoughts((prevThoughts) => {
-      const updatedThoughts = prevThoughts.map((thought) => {
-        if (thought.id === updatedThought.id) {
-          return updatedThought;
-        }
-        return thought;
-      });
-      return updatedThoughts;
-    });
-  };
-
-  const deleteThought = (id: string) => {
-    setThoughts((prevThoughts) => {
-      const updatedThoughts = prevThoughts.filter((thought) => thought.id !== id);
-      return updatedThoughts;
-    });
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedThoughts = await getThoughts();
+      setThoughts(fetchedThoughts);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
       <Header />
       <NavBar />
-      <h2>My Thoughts Go Here</h2>
-      {thoughts.map((thought) => (
-        <div key={thought.id}>
-          <h3>{thought.question} question</h3>
-          <p>{thought.answer} answer</p>
-          <button onClick={() => deleteThought(thought.id)}>Delete</button>
-        </div>
-      ))}
+      <h1 className='thoughtlist-h2'>My Thoughts</h1>
+      <ul className='thought-list-ul'>
+        {thoughts.map((thought) => (
+          <li key={thought.id}>
+            <h3>{thought.question}</h3>
+            <p>{thought.answer}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

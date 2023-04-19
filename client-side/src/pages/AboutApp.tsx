@@ -4,7 +4,7 @@ import '../styles/AboutApp.css'
 
 const AboutApp: React.FC = () => {
   return (
-    <div>
+    <div className="aboutpage">
       <Header />
       <NavBar />
       <h2>About the Thought App</h2>

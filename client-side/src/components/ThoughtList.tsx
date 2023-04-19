@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import thoughtfulQuestions from '../ThoughtsArray';
 import ThoughtForm from './ThoughtForm';
+import '../styles/ThoughtList.css'
 
 type Question = {
   text: string;
@@ -26,8 +27,8 @@ type ThoughtListProps = {
 const ThoughtList: React.FC<ThoughtListProps> = ({ questions, onQuestionSelect }) => {
   return (
     <>
-      <h2>Thoughtful Questions</h2>
-      <ul>
+      <h2 className='thoughtlist-h2'>Thoughtful Questions</h2>
+      <ul className='thought-list-ul'>
         {questions.map((question) => (
           <ThoughtListItem
             key={question.id}
@@ -35,6 +36,7 @@ const ThoughtList: React.FC<ThoughtListProps> = ({ questions, onQuestionSelect }
             onClick={onQuestionSelect}
           />
         ))}
+        
       </ul>
     </>
   );

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import NavBar from '../components/NavBar';
+import Header from '../components/Header';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -12,6 +14,8 @@ const LoginPage = () => {
 
   return (
     <div>
+      <Header/>
+      <NavBar />
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
