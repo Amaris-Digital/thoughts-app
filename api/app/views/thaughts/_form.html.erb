@@ -1,0 +1,32 @@
+<%= form_with(model: thaught) do |form| %>
+  <% if thaught.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(thaught.errors.count, "error") %> prohibited this thaught from being saved:</h2>
+
+      <ul>
+        <% thaught.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :thaught_text, style: "display: block" %>
+    <%= form.text_field :thaught_text %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :question_id, style: "display: block" %>
+    <%= form.text_field :question_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
