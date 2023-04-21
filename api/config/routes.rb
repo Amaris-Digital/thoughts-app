@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "static#home"
+
+  resources :sessions, only: [:create]
+  resources :registrations, only: [:create]
 end
